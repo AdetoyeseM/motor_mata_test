@@ -16,8 +16,4 @@ fetchNews(BuildContext? context) async {
       .map<NewsModel>((news) => NewsModel.fromJson(news))
       .toList();
   newsBLoc.addBanks(mnews);
-
-  print(url);
-  print(btcnews);
-  print(mnews);
 }

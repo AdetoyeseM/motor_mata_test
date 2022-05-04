@@ -6,7 +6,6 @@ GetIt locator = GetIt.instance;
 closeAll() async {
   await locator.reset();
 }
-
 serviceLocators() {
   locator.registerLazySingleton(() => NewsBLoc());
 }

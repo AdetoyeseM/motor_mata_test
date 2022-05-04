@@ -10,17 +10,15 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-   @override
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'MotorMata Task',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-      
         primarySwatch: Colors.blue,
       ),
       home: const SplashScreen(),
     );
   }
 }
- 
