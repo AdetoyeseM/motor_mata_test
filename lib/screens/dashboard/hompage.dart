@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:new_api_task/models/newModels.dart';
 import 'package:new_api_task/screens/dashboard/favourites.dart';
@@ -10,7 +8,7 @@ import 'package:new_api_task/utils/news_tile.dart';
 
 // ignore: must_be_immutable
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -38,7 +36,7 @@ class _HomePageState extends State<HomePage> {
             ),
             const Spacer(),
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 pushToFavoriteWordsRoute(context);
               },
               child: Stack(alignment: Alignment.center, children: [
@@ -64,8 +62,8 @@ class _HomePageState extends State<HomePage> {
               return const Center(child: CircularProgressIndicator());
             }
             return ListView.builder(
-              
-                itemCount: 20,
+                reverse: true,
+                itemCount: 15,
                 shrinkWrap: true,
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (context, index) {
@@ -81,10 +79,8 @@ class _HomePageState extends State<HomePage> {
                         setState(() {
                           if (isFav) {
                             favourited.remove(e[index]);
-                           
                           } else {
                             favourited.add(e[index]);
-                            
                           }
                         });
                       },
@@ -98,7 +94,8 @@ class _HomePageState extends State<HomePage> {
           }),
     );
   }
-   Future pushToFavoriteWordsRoute(BuildContext context) {
+
+  Future pushToFavoriteWordsRoute(BuildContext context) {
     return Navigator.of(context).push(
       MaterialPageRoute(
         builder: (BuildContext context) => FavoriteWordsRoute(
