@@ -26,20 +26,14 @@ class _SplashScreenState extends State<SplashScreen> {
       height: double.infinity,
       width: double.infinity,
       color: Colors.white,
-      child: Stack(
-        children: [
-          SizedBox(
-            height: double.infinity,
-            width: double.infinity,
-            child: Center(
-              child: Image.asset(
-                "assets/images/news.jpg",
-                width: 145,
-                height: 145,
-              ),
-            ),
+      child: SizedBox( 
+        child: Center(
+          child: Image.asset(
+            "assets/images/news.jpg",
+            width: 145,
+            height: 145,
           ),
-        ],
+        ),
       ),
     );
   }
